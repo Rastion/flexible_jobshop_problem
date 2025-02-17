@@ -1,0 +1,39 @@
+{
+    "entry_point": "flexible_jobshop_problem:FlexibleJobShopProblem",
+    "default_params": {
+      "instance_file": "instances/Mk01.fjs"
+    },
+    "problem_type": "Flexible Job Shop Scheduling",
+    "description": "In the flexible job shop scheduling problem, a set of jobs must be scheduled on a set of machines. Each job consists of an ordered sequence of operations, and each operation can be performed on one of several compatible machines with machine-dependent processing times. Operations in the same job must be processed sequentially, and each machine can process only one operation at a time. The objective is to minimize the makespan, defined as the time when all jobs are completed.",
+    "keywords": [
+      "job shop",
+      "scheduling",
+      "flexible",
+      "machine assignment",
+      "makespan"
+    ],
+    "data_format": {
+      "instance_file": {
+        "format": "A text file containing: first line with two integers representing the number of jobs and the number of machines (plus an extra number that can be ignored); for each job, a line starting with the number of operations followed by, for each operation, the number of compatible machines and then pairs of integers (machine id and processing time) for each compatible machine. Machine ids are 1-indexed."
+      }
+    },
+    "decision_variables": {
+      "schedule": {
+        "type": "dictionary",
+        "description": "A mapping where each key is a job index (0-based) and the corresponding value is a list of operations. Each operation is represented as a dictionary with keys 'machine' (the chosen machine index), 'start' (the start time), and 'end' (the finish time)."
+      }
+    },
+    "objective": {
+      "type": "minimization",
+      "function": "max_{j in jobs} (end time of last operation in job j)",
+      "description": "Minimize the makespan, which is the maximum completion time over all jobs."
+    },
+    "solution_representation": "A dictionary mapping each job (0-based index) to a list of operations with assigned machine, start time, and end time.",
+    "compatible_optimizers": [
+      "genetic_algorithm",
+      "simulated_annealing",
+      "particle_swarm",
+      "tabu_search"
+    ]
+  }
+  
