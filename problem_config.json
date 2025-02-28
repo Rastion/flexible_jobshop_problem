@@ -3,11 +3,14 @@
     "default_params": {
       "instance_file": "instances/Mk01.fjs"
     },
-    "problem_type": "Flexible Job Shop Scheduling",
+    "creator": "Rastion",
+    "type": "problem",
+    "problem_name": "Flexible job shop scheduling",
     "description": "In the flexible job shop scheduling problem, a set of jobs must be scheduled on a set of machines. Each job consists of an ordered sequence of operations, and each operation can be performed on one of several compatible machines with machine-dependent processing times. Operations in the same job must be processed sequentially, and each machine can process only one operation at a time. The objective is to minimize the makespan, defined as the time when all jobs are completed.",
+    "link_to_dataset": "https://github.com/Rastion/flexible_jobshop_problem/blob/main/instances/Mk01.fjs",
     "keywords": [
       "job shop",
-      "scheduling",
+      "production-scheduling",
       "flexible",
       "machine assignment",
       "makespan"
@@ -29,11 +32,8 @@
       "description": "Minimize the makespan, which is the maximum completion time over all jobs."
     },
     "solution_representation": "A dictionary mapping each job (0-based index) to a list of operations with assigned machine, start time, and end time.",
-    "compatible_optimizers": [
-      "genetic_algorithm",
-      "simulated_annealing",
-      "particle_swarm",
-      "tabu_search"
+    "formulations": [
+      ""
     ]
   }
   
